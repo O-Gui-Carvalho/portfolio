@@ -22,8 +22,41 @@ export const navIcons: NavIcons[] = [
     {id: 4, img: "/icons/mode.svg"},
 ]
 
+const INITIAL_Z_INDEX = 1000;
+
+interface WindowState {
+  isOpen: boolean;
+  zIndex: number;
+  data: any;
+}
+
+type WindowId = 
+  | 'finder' 
+  | 'contact' 
+  | 'resume' 
+  | 'safari' 
+  | 'photos' 
+  | 'terminal' 
+  | 'txtfile' 
+  | 'imgfile'
+  | 'trash';
+
+type WindowConfig = Record<WindowId, WindowState>;
+
+const WINDOW_CONFIG: WindowConfig = {
+  finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  trash: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+};
+
 export interface DockApps {
-  id: string;
+  id: WindowId;
   name: string;
   icon: string;
   canOpen: boolean;
@@ -67,3 +100,6 @@ export const dockApps: DockApps[] = [
     canOpen: false,
   },
 ];
+
+export { INITIAL_Z_INDEX, WINDOW_CONFIG };
+export type { WindowState, WindowId, WindowConfig };
