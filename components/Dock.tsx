@@ -1,13 +1,12 @@
 'use client'
 
-import { DockApps, dockApps } from '@/constants'
+import { dockApps } from '@/constants'
 import type { WindowId } from '@/constants'
 import useWindowStore from '@/store/window'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import Image from 'next/image'
 import { useRef } from 'react'
-
 import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
 
@@ -29,7 +28,7 @@ const Dock = () => {
                 const center = iconLeft - left + width / 2
                 const distance = Math.abs(mouseX - center)
 
-                const intensity = Math.exp(-(distance ** 3) / 2000)
+                const intensity = Math.exp(-(distance ** 2) / 2000)
 
                 gsap.to(icon, {
                     scale: 1 + 0.25 * intensity,
@@ -98,7 +97,7 @@ const Dock = () => {
                             src={`/images/${icon}`}
                             alt={name}
                             loading='lazy'
-                            className={canOpen ? "" : "opacity-60"}
+                            className={` ${canOpen ? "" : "opacity-60"}`}
                             width={64}
                             height={64}
                         />

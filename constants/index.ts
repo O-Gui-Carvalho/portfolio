@@ -103,3 +103,36 @@ export const dockApps: DockApps[] = [
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };
 export type { WindowState, WindowId, WindowConfig };
+
+
+interface TechStackItem {
+  category: string;
+  items: string[];
+}
+
+export const techStack: TechStackItem[] = [
+  {
+    category: "Frontend",
+    items: ["React.js", "Next.js", "TypeScript"],
+  },
+  {
+    category: "Mobile",
+    items: ["React Native", "Expo"],
+  },
+  {
+    category: "Styling",
+    items: ["Tailwind CSS", "Sass", "CSS"],
+  },
+  {
+    category: "Backend",
+    items: ["Node.js", "Express", "NestJS", "Hono"],
+  },
+  {
+    category: "Database",
+    items: ["MongoDB", "PostgreSQL"],
+  },
+  {
+    category: "Dev Tools",
+    items: ["Git", "GitHub", "Docker"],
+  },
+];
