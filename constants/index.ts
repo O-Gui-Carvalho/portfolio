@@ -1,12 +1,12 @@
 export interface NavLink {
   id: number;
   name: string;
-  type: string;
+  type: WindowId;
 }
 
 export const navLinks: NavLink[] = [
   { id: 1, name: "Projects", type: "finder" },
-  { id: 2, name: "Contact", type: "constact" },
+  { id: 2, name: "Contact", type: "contact" },
   { id: 3, name: "Resume", type: "resume" },
 ]
 

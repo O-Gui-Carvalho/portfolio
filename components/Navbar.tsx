@@ -1,10 +1,15 @@
+'use client'
+
 import Image from "next/image"
 import Link from "next/link"
 import { navIcons, navLinks } from "@/constants"
 
 import dayjs from "dayjs"
+import useWindowStore from "@/store/window"
 
 const Navbar = () => {
+  const { openWindow } = useWindowStore()
+
   return (
     <nav>
       <div className="">
@@ -12,8 +17,12 @@ const Navbar = () => {
         <p className="font-medium">Guilherme's Portfolio</p>
 
         <ul>
-          {navLinks.map(({id, name}) => (
-            <li key={id}><Link href={'/'}>{name}</Link></li>
+          {navLinks.map(({id, name, type}) => (
+            <li key={id} onClick={() => openWindow(type)}>
+              <Link href={'/'}>
+                {name}
+              </Link>
+            </li>
           ))}
         </ul>
       </div>
