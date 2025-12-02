@@ -1,5 +1,5 @@
 import { Dock, Navbar, Welcome } from "@/components"
-import { Terminal } from "@/windows"
+import { Browser, Terminal } from "@/windows"
 
 import gsap from "gsap"
 import { Draggable } from "gsap/Draggable"
@@ -14,6 +14,7 @@ export default function Home() {
       <Dock />
 
       <Terminal />
+      <Browser />
     </main>
   )
 }
