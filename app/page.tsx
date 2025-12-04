@@ -1,5 +1,5 @@
 import { DesktopFolders, Dock, Navbar, Welcome } from "@/components"
-import { Browser, Contact, Finder, Image, Photos, Resume, Terminal, Text } from "@/windows"
+import { Browser, Contact, Finder, Image, Photos, Resume, Terminal, Text, Trash } from "@/windows"
 
 import gsap from "gsap"
 import { Draggable } from "gsap/Draggable"
@@ -22,6 +22,7 @@ export default function Home() {
       <Contact />
       <DesktopFolders />
       <Photos />
+      <Trash />
     </main>
   )
 }

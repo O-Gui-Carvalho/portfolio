@@ -9,11 +9,11 @@ import clsx from "clsx"
 import { Search } from "lucide-react"
 import Image from "next/image"
 
-const Finder = () => {
-    const { openWindow } = useWindowStore()
-    const { activeLocations, setActiveLocation } = useLocationStore()
+const Trash = () => {
+  const { openWindow } = useWindowStore()
+  const { activeLocations, setActiveLocation } = useLocationStore()
 
-    const activeLocation = activeLocations.finder
+  const activeLocation = activeLocations.trash
 
     const openItem = (item: Item) => {
         if (item.kind === 'file') {
@@ -45,7 +45,7 @@ const Finder = () => {
         }
 
         else if (item.kind === 'folder' && item.children) {
-            setActiveLocation('finder', item as Location)
+            setActiveLocation('trash', item as Location)
         }
     }
 
@@ -57,7 +57,7 @@ const Finder = () => {
                 {items.map((item) => (
                     <li 
                         key={item.id} 
-                        onClick={() => setActiveLocation('finder', item as Location)}
+                        onClick={() => setActiveLocation('trash', item as Location)}
                         className={clsx(item.id === activeLocation.id ? "active" : "not-active")}
                     >
                         <Image 
@@ -75,37 +75,36 @@ const Finder = () => {
             </ul>
         </div>
     )
-
   return (
     <>
-        <div id="window-header">
-            <WindowControlls target="finder"/>
-            <Search className="icon"/>
-        </div>
-
-        <div className="bg-white flex h-full">
-            <div className="sidebar">
-                {renderList('Favorites', Object.values(locations))}
-                {renderList('Work', locations.work.children || [])}
+            <div id="window-header">
+                <WindowControlls target="trash"/>
+                <Search className="icon"/>
             </div>
-
-            <ul className="content">
-                {activeLocation?.children?.map((item) => (
-                    <li 
-                        key={item.id} 
-                        className={item.position} 
-                        onClick={() => openItem(item)}
-                    >
-                        <Image src={item.icon} alt={item.name} width={32} height={32}/>
-                        <p>{item.name}</p>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    </>
+    
+            <div className="bg-white flex h-full">
+                <div className="sidebar">
+                    {renderList('Favorites', Object.values(locations))}
+                    {renderList('Work', locations.work.children || [])}
+                </div>
+    
+                <ul className="content">
+                    {activeLocation?.children?.map((item) => (
+                        <li 
+                            key={item.id} 
+                            className={item.position} 
+                            onClick={() => openItem(item)}
+                        >
+                            <Image src={item.icon} alt={item.name} width={32} height={32}/>
+                            <p>{item.name}</p>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </>
   )
 }
 
-const FinderWindow = WindowsWrapper(Finder, 'finder')
+const TrashWindow = WindowsWrapper(Trash, 'trash')
 
-export default FinderWindow
+export default TrashWindow

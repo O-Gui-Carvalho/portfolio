@@ -6,5 +6,6 @@ import Text from "./Text";
 import Image from "./ImageWindowContent";
 import Contact from "./Contact";
 import Photos from "./Photos";
+import Trash from "./Trash";
 
-export { Terminal, Browser, Resume, Finder, Text, Image, Contact, Photos }
+export { Terminal, Browser, Resume, Finder, Text, Image, Contact, Photos, Trash }

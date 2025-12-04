@@ -1,29 +1,41 @@
-import { locations, Location } from "@/constants";
+import { locations, Location, WindowId } from "@/constants";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
-const DEFAULT_LOCATION = locations.work;
-
 interface LocationState {
-    activeLocation: Location
-    setActiveLocation: (location: Location | null) => void
-    resetActiveLocation: () => void
+    activeLocations: Record<WindowId, Location>
+    setActiveLocation: (windowId: WindowId, location: Location | null) => void
+    resetActiveLocation: (windowId: WindowId) => void
 }
 
 const useLocationStore = create<LocationState>()(immer((set) => ({
-    activeLocation: DEFAULT_LOCATION,
+    activeLocations: {
+        finder: locations.work,
+        trash: locations.trash,
+        contact: locations.work,
+        resume: locations.work,
+        safari: locations.work,
+        photos: locations.work,
+        terminal: locations.work,
+        txtfile: locations.work,
+        imgfile: locations.work,
+    },
 
-    setActiveLocation: (location: Location | null) =>
+    setActiveLocation: (windowId: WindowId, location: Location | null) =>
       set((state) => {
         if (location) {
-          state.activeLocation = location;
+          state.activeLocations[windowId] = location;
         }
       }),
 
-    resetActiveLocation: () =>
+    resetActiveLocation: (windowId: WindowId) =>
       set((state) => {
-        state.activeLocation = DEFAULT_LOCATION;
-    }),
+        if (windowId === 'finder') {
+          state.activeLocations[windowId] = locations.work;
+        } else if (windowId === 'trash') {
+          state.activeLocations[windowId] = locations.trash;
+        }
+      }),
 })))
 
 export default useLocationStore;
