@@ -20,7 +20,7 @@ const DesktopFolders = () => {
             type: 'work' as const
         } as Location
             
-        setActiveLocation(projectAsLocation)
+        setActiveLocation('finder', projectAsLocation)
         openWindow('finder')
     }
 

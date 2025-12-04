@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="">
+      <div>
         <Image src={'/images/logo.svg'} alt="Logo" height={16} width={16} />
         <p className="font-medium">Guilherme's Portfolio</p>
 
@@ -27,7 +27,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="">
+      <div>
         <ul>
           {navIcons.map(({ id, img }) => (
             <li key={id}><Image src={img} alt="Navigation Icons" width={16} height={16}/></li>
