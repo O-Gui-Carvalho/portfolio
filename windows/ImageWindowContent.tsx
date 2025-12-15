@@ -19,7 +19,7 @@ const ImageWindowContent = () => {
             <h2>{name}</h2>
         </div>
 
-        <div className="p-5 bg-white">
+        <div className="p-5">
             {imageUrl ? (
                 <div className="w-full">
                     <Image src={imageUrl} alt={name} width={400} height={400} className="w-full h-auto max-h-[70vh] object-contain rounded"/>

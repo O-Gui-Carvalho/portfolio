@@ -47,7 +47,7 @@ const Navbar = () => {
           {navIcons.map(({ id, img }) => (
             <li 
               key={id}  
-              className="hover:bg-white/50 p-1 rounded-sm cursor-pointer"
+              className="hover:bg-white/50 p-1 rounded-sm cursor-pointer transition-colors duration-300"
             >
               <Image 
                 src={img} 
