@@ -19,7 +19,6 @@ export const navIcons: NavIcons[] = [
     {id: 1, img: "/icons/wifi.svg"},
     {id: 2, img: "/icons/search.svg"},
     {id: 3, img: "/icons/user.svg"},
-    {id: 4, img: "/icons/mode.svg"},
 ]
 
 const INITIAL_Z_INDEX = 1000;
@@ -117,7 +116,7 @@ export const techStack: TechStackItem[] = [
   },
   {
     category: "Mobile",
-    items: ["React Native", "Expo"],
+    items: ["React Native"],
   },
   {
     category: "Styling",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Georama } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 const georama = Georama({
   subsets: ['latin'],
@@ -19,11 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${georama.className} antialiased`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="light" themes={["light", "dark"]} storageKey="theme">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
