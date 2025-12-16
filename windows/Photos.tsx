@@ -38,7 +38,7 @@ const Photos = () => {
         </div>
 
         <div className="gallery">
-          <ul>
+          {/*<ul>
             {gallery.map((item) => (
               <li key={item.id}>
                 <Image 
@@ -49,7 +49,10 @@ const Photos = () => {
                 />
               </li>
             ))}
-          </ul>
+          </ul>*/}
+          <div className="flex items-center justify-center h-full w-lg">
+            <span>No items found</span>
+          </div>
         </div>
       </div>
     </>

@@ -387,7 +387,7 @@ export const ABOUT_LOCATION: Location = {
   icon: "/icons/info.svg",
   kind: "folder",
   children: [
-    {
+    /*{
       id: 1,
       name: "me.png",
       icon: "/images/image.png",
@@ -413,21 +413,21 @@ export const ABOUT_LOCATION: Location = {
       fileType: "img",
       position: "top-52 left-80",
       imageUrl: "/images/adrian-3.jpeg",
-    },
+    },*/
     {
-      id: 4,
+      id: 1,
       name: "about-me.txt",
       icon: "/images/txt.png",
       kind: "file",
       fileType: "txt",
-      position: "top-60 left-5",
+      position: "top-10 left-5", /* "top-60 left-5" */
       subtitle: "Meet the Developer Behind the Code",
-      image: "/images/adrian.jpg",
+      image: "/images/profile.png",
       description: [
-        "Hey! I’m Adrian 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
-        "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
-        "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
-        "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅",
+        "Hi, I’m Guilherme Carvalho, a frontend developer focused on building performant, user-centered web applications.",
+        "I specialize in JavaScript, React, and Next.js, with hands-on experience creating modern interfaces using Tailwind CSS and integrating APIs into real-world projects.",
+        "I’m the founder of Studio Destaq, where I design and develop digital solutions for small and medium-sized businesses, always prioritizing usability, responsiveness, and SEO.",
+        "With a Bachelor’s degree in Computer Science, I continuously refine my technical and UX skills to deliver clean, scalable, and maintainable code.",
       ],
     },
   ],
@@ -501,28 +501,21 @@ export const socials = [
     text: "Github",
     icon: "/icons/github.svg",
     bg: "#f4656b",
-    link: "https://github.com/JavaScript-Mastery-Pro",
+    link: "https://github.com/O-Gui-Carvalho",
   },
   {
     id: 2,
-    text: "Platform",
+    text: "Website",
     icon: "/icons/atom.svg",
     bg: "#4bcb63",
-    link: "https://jsmastery.com/",
+    link: "https://studiodestaq.com.br/",
   },
   {
     id: 3,
-    text: "Twitter/X",
-    icon: "/icons/twitter.svg",
-    bg: "#ff866b",
-    link: "https://x.com/jsmasterypro",
-  },
-  {
-    id: 4,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
     bg: "#05b6f6",
-    link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+    link: "https://www.linkedin.com/in/guilherme-carvalho-926459366/",
   },
 ];
 
